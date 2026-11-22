@@ -57,19 +57,24 @@
         <p id="odds-kicker" class="section-kicker"></p>
         <h2 id="odds-title"></h2>
         <div class="odds-summary">
-          <span id="odds-fraction" class="odds-fraction"></span>
+          <span id="odds-fraction" class="odds-fraction">—</span>
           <span id="odds-explanation"></span>
         </div>
-        <p class="helper">These are unconditional odds: opponents’ hidden cards have not been revealed, so each unused card is equally likely.</p>
-        <div id="odds-list" class="odds-list" aria-label="Possible next community cards"></div>
-        <button id="odds-next-button" class="primary-button" type="button"></button>
+        <p id="odds-assumption" class="helper"></p>
+        <p id="calculation-status" class="calculation-status" role="status"></p>
+        <div id="odds-list" class="odds-list" aria-label="Next cards ranked by showdown equity"></div>
+        <div class="odds-actions">
+          <button id="fold-button" class="secondary-button" type="button" disabled>Fold hand</button>
+          <button id="odds-next-button" class="primary-button" type="button" disabled></button>
+        </div>
       </section>
 
       <section class="note" aria-label="How the calculator works">
         <strong>How it works</strong>
-        <p>It removes only the cards you can see. It does not guess opponents’ private cards or use an internet connection.</p>
+        <p>It runs the odds on your phone. It ranks cards by how much they change your chance to win—not by pretending to know the next card.</p>
       </section>
     </main>
     <script src="app.js"></script>
   </body>
 </html>
+
