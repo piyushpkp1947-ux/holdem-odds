@@ -47,6 +47,7 @@ h2 { margin-bottom: .5rem; font-size: 1.45rem; line-height: 1.18; letter-spacing
 .primary-button:disabled { opacity: .4; cursor: not-allowed; }
 .secondary-button { border: 1px solid var(--line); background: white; color: var(--felt); }
 .card-actions { display: grid; grid-template-columns: .8fr 1.2fr; gap: .75rem; margin-top: 1.25rem; }
+.odds-actions { display: grid; grid-template-columns: .8fr 1.2fr; gap: .75rem; }
 
 .selection-panel { margin: 1rem 0; padding: .75rem; border-left: 4px solid var(--gold); background: #fbf5e7; }
 .selection-label { margin: 0 0 .5rem; color: var(--muted); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
@@ -64,12 +65,17 @@ h2 { margin-bottom: .5rem; font-size: 1.45rem; line-height: 1.18; letter-spacing
 
 .odds-summary { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1rem; margin: 1rem 0 .75rem; padding: 1rem; background: var(--felt); color: white; }
 .odds-fraction { color: var(--gold); font-family: Georgia, serif; font-size: 1.8rem; font-weight: 700; }
-.odds-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; margin: 1.25rem 0; }
-.odd-card { display: flex; align-items: center; justify-content: space-between; padding: .55rem .45rem; border: 1px solid var(--line); border-radius: .35rem; background: white; }
-.odd-card span { font-weight: 800; }
-.odd-card small { color: var(--muted); font-size: .68rem; }
+.calculation-status { min-height: 1.4rem; margin: -.35rem 0 .7rem; color: var(--felt-2); font-size: .85rem; font-weight: 700; }
+.odds-list { display: grid; gap: .45rem; margin: 1.25rem 0; }
+.equity-card { display: grid; grid-template-columns: 2rem 1fr auto; align-items: center; gap: .6rem; padding: .65rem .7rem; border: 1px solid var(--line); border-radius: .35rem; background: white; }
+.equity-card.top-card { border-color: var(--gold); background: #fffaf0; }
+.equity-rank { color: var(--muted); font-size: .75rem; font-weight: 800; text-align: center; }
+.equity-name { font-weight: 800; }
+.equity-name small { display: block; margin-top: .1rem; color: var(--muted); font-size: .7rem; font-weight: 600; }
+.equity-value { color: var(--felt-2); font-size: 1.05rem; font-weight: 900; }
 .note { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; line-height: 1.45; }
 .note strong { color: var(--ink); }
 .note p { margin: .25rem 0 0; }
 
-@media (min-width: 540px) { .app-shell { margin: 1rem auto; min-height: calc(100dvh - 2rem); border-radius: .75rem; } .odds-list { grid-template-columns: repeat(6, 1fr); } }
+@media (min-width: 540px) { .app-shell { margin: 1rem auto; min-height: calc(100dvh - 2rem); border-radius: .75rem; } .odds-list { grid-template-columns: repeat(2, 1fr); } }
+
