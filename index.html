@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#102820" />
+    <meta name="description" content="Offline Texas Hold'em turn and river probability calculator." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Hold'em Odds</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">OFFLINE DECK CALCULATOR</p>
+          <h1>Hold’em Odds</h1>
+        </div>
+        <button id="reset-button" class="text-button" type="button">New hand</button>
+      </header>
+
+      <section class="progress" aria-label="Hand setup progress">
+        <div class="progress-step active" data-progress="setup"><span>1</span>Table</div>
+        <div class="progress-step" data-progress="hole"><span>2</span>Your cards</div>
+        <div class="progress-step" data-progress="flop"><span>3</span>Flop</div>
+        <div class="progress-step" data-progress="turn"><span>4</span>Turn</div>
+        <div class="progress-step" data-progress="river"><span>5</span>River odds</div>
+      </section>
+
+      <section id="setup-screen" class="screen" aria-labelledby="setup-title">
+        <p class="section-kicker">START A HAND</p>
+        <h2 id="setup-title">How many players are at the table?</h2>
+        <p class="helper">Include yourself. This is recorded for the hand; hidden cards do not change the next-card odds.</p>
+        <div id="player-picker" class="number-grid" role="group" aria-label="Number of players"></div>
+        <button id="start-button" class="primary-button" type="button" disabled>Choose your cards</button>
+      </section>
+
+      <section id="cards-screen" class="screen hidden" aria-live="polite">
+        <p id="card-section-kicker" class="section-kicker"></p>
+        <h2 id="card-title"></h2>
+        <p id="card-instruction" class="helper"></p>
+
+        <div class="selection-panel">
+          <p class="selection-label">Selected</p>
+          <div id="selected-cards" class="selected-cards" aria-label="Selected cards"></div>
+        </div>
+
+        <div id="deck" class="deck" aria-label="Card picker"></div>
+        <div class="card-actions">
+          <button id="back-button" class="secondary-button" type="button">Back</button>
+          <button id="continue-button" class="primary-button" type="button" disabled>Continue</button>
+        </div>
+      </section>
+
+      <section id="odds-screen" class="screen hidden" aria-live="polite">
+        <p id="odds-kicker" class="section-kicker"></p>
+        <h2 id="odds-title"></h2>
+        <div class="odds-summary">
+          <span id="odds-fraction" class="odds-fraction"></span>
+          <span id="odds-explanation"></span>
+        </div>
+        <p class="helper">These are unconditional odds: opponents’ hidden cards have not been revealed, so each unused card is equally likely.</p>
+        <div id="odds-list" class="odds-list" aria-label="Possible next community cards"></div>
+        <button id="odds-next-button" class="primary-button" type="button"></button>
+      </section>
+
+      <section class="note" aria-label="How the calculator works">
+        <strong>How it works</strong>
+        <p>It removes only the cards you can see. It does not guess opponents’ private cards or use an internet connection.</p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Hold'em Odds",
+  "short_name": "Hold'em Odds",
+  "description": "Offline Texas Hold'em turn and river probability calculator.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffdf8",
+  "theme_color": "#102820",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
